@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TIC TAC TOE</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </head>
+<body>
+    <h1>✨ Tic Tac Toe ✨</h1>
+    <p>Current Player: <strong>{{ current }}</strong></p>
+
+    <form method='post'>
+        <div class='board'>
+            {% for i in range(9) %}
+            <button name='cell' value='{{ i }}' {% if board[i] %}disabled{% endif %}>
+                {{board[i]}}
+            </button>
+            {% endfor %}
+        </div>
+    </form>
+    <p class='message'>{{message}}</p>
+    <a href='/reset' class='reset-btn'>🔁 Reset Game</a>
+</body>
+</html>

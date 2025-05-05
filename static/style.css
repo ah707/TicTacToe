@@ -1,0 +1,146 @@
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f7f6; /* Light, soft background */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #007bff; /* Primary accent color */
+    text-align: center;
+    /* Subtle entry animation: slight slide down */
+    animation: subtle-slide-down 0.8s ease-out both;
+}
+
+@keyframes subtle-slide-down {
+  0% {
+    transform: translateY(-10px); /* Start only slightly above */
+  }
+  100% {
+    transform: translateY(0); /* Move to final position */
+  }
+}
+
+p {
+    font-size: 1.1em;
+    margin: 8px 0;
+    color: #555;
+    text-align: center;
+    /* Subtle entry animation: slight slide down, delayed */
+    animation: subtle-slide-down 0.6s ease-out 0.3s both;
+}
+
+strong {
+    color: #28a745; /* Secondary accent for player */
+}
+
+form {
+     display: contents;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(90px, 130px));
+    grid-gap: 12px;
+    margin: 30px 0;
+    max-width: 420px;
+    width: 100%;
+    /* Subtle entry animation: slight slide down, delayed */
+    animation: subtle-slide-down 0.8s ease-out 0.6s both;
+}
+
+.board button {
+    aspect-ratio: 1 / 1;
+    font-size: 3em;
+    font-weight: bold;
+    background-color: #fff;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    cursor: pointer;
+    /* Smoother, less aggressive transitions */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    /* Individual cell animation (optional, can be tiring if too much) */
+    /* Consider adding this with JS when cells are filled */
+}
+
+.board button:hover:not(:disabled) {
+    background-color: #e9ecef;
+    border-color: #007bff;
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.board button:focus-visible:not(:disabled) {
+     background-color: #e9ecef;
+     border-color: #007bff;
+     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.board button:disabled {
+    opacity: 0.9; /* Keep visible */
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    transform: none;
+    box-shadow: none;
+    border-color: #e9ecef;
+}
+
+.message {
+    font-size: 1.4em;
+    color: #28a745;
+    min-height: 1.5em;
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 600;
+     /* Subtle entry animation: slight slide down, delayed */
+    animation: subtle-slide-down 0.7s ease-out 1s both;
+}
+
+.reset-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    /* Subtle entry animation: slight slide down, delayed */
+    animation: subtle-slide-down 0.6s ease-out 1.4s both;
+}
+
+.reset-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 7px rgba(0, 123, 255, 0.25);
+}
+
+.reset-btn:focus-visible {
+    background-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Keyframes reused for subtle sliding */
+/* @keyframes subtle-slide-down is defined above */
